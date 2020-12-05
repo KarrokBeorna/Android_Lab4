@@ -5,7 +5,7 @@ public class BibConfig {
    * Should the database be shuffled or not (useful for debugging and testing).
    * May be modified at any moment. Only affects newly created {@link BibDatabase} instances.
    */
-  public boolean shuffle = false;
+  public boolean shuffle = true;
 
   /**
    * Strict mode enabled flag.

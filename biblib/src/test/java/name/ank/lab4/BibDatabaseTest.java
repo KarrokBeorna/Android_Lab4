@@ -6,6 +6,7 @@ import org.junit.Test;
 
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Collections;
 
 import static org.junit.Assert.*;
 
@@ -72,13 +73,9 @@ public class BibDatabaseTest {
   @Test
   public void shuffleFlag() throws IOException {
     boolean ans = false;
-    for (int i = 0; i < 10; i++) {
-      BibDatabase database = openDatabase("/mixed.bib");
-      BibConfig cfg = database.getCfg();
-      cfg.shuffle = true;
-      if (database.getEntry(0).getType() == Types.MISC) {
-        ans = true;
-      }
+    BibDatabase database = openDatabase("/mixed.bib");
+    if (database.getEntry(0).getType() == Types.MISC) {
+      ans = true;
     }
     assertTrue(ans);
   }
